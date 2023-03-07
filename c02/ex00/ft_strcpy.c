@@ -6,7 +6,7 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 21:00:16 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/06 15:53:21 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/07 00:35:32 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ char	*ft_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i ++;
 	}
-	dest[i] = '0';
+	dest[i] = '\0';
 	return (dest);
 }

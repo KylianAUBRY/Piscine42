@@ -6,7 +6,7 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 22:20:06 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/06 00:30:00 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/06 22:24:20 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -21,7 +21,7 @@ void	put_exa(char c)
 {
 	char	*exa;
 
-	exa = "0123456789qbcdef";
+	exa = "0123456789abcdef";
 	ft_putchar('\\');
 	ft_putchar(exa[c / 16]);
 	ft_putchar(exa[c % 16]);
