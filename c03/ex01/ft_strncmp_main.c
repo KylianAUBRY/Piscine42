@@ -6,7 +6,7 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:43:57 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/08 02:37:01 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/08 19:23:47 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -17,6 +17,8 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	int	i;
 
 	i = 0;
+	if (n == 0)
+		return (0);
 	while (s1[i] == s2[i] && n -1 > 0)
 	{
 		i ++;

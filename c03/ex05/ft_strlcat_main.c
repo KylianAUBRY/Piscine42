@@ -6,7 +6,7 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 01:30:49 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/08 02:28:03 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/08 19:28:13 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -38,7 +38,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	}
 	if (size > t)
 	{
-		dest[t + 1] = '\0';
+		dest[t + i] = '\0';
 	}
 	i = (unsigned int)ft_strlen(src);
 	return (t + i);

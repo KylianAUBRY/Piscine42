@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strncat_main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 00:37:35 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/07 00:58:39 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/08 19:34:44 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -22,7 +22,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcat(char *dest, char *src, unsigned int nb)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	int	i;
 	int	len;
@@ -45,7 +45,7 @@ int	main(void)
 	char	dest1[50] = "test";
 	char	src[] = "42, test";
 
-	printf("ft : %s\n", ft_strcat(dest, src, 5));
+	printf("ft : %s\n", ft_strncat(dest, src, 5));
 	printf("lib: %s\n", strncat(dest1, src, 5));
 	return (0);
 }
