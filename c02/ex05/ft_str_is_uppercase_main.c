@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_str_is_uppercase_main.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 16:57:12 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/05 16:59:03 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/06 22:02:04 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(void)
 	char	str1[] = "FGEEFsEF";
 	char	str2[] = "-WDWDQ";
 	char	str3[] = "WWQ WDDW";
-	char	str4[] = "wWDWD";
+	char	str4[] = "";
 	
 	
 	printf ("%d \n", ft_str_is_uppercase(str));

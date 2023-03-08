@@ -6,7 +6,7 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 15:12:08 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/05 16:19:54 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/06 21:59:26 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -42,7 +42,7 @@ int	main(void)
 	char	str1[] = "156 8";
 	char	str2[] = "156\n8";
 	char	str3[] = "-1568";
-	char	str4[] = "1";
+	char	str4[] = "";
 	
 	
 	printf ("%d \n", ft_str_is_numeric(str));

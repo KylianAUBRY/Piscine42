@@ -6,7 +6,7 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 22:20:06 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/06 22:24:20 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/08 02:11:46 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -17,22 +17,12 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	put_exa(char c)
-{
-	char	*exa;
-
-	exa = "0123456789abcdef";
-	ft_putchar('\\');
-	ft_putchar(exa[c / 16]);
-	ft_putchar(exa[c % 16]);
-}
-
 int	comp_affi(char str)
 {
-	if (str >= 32 && str <= 126)
-		return (1);
-	else
+	if (str < 32 || str == 127)
 		return (0);
+	else
+		return (1);
 }
 
 void	ft_putstr_non_printable(char *str)
@@ -42,10 +32,14 @@ void	ft_putstr_non_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (comp_affi(str[i]) == 1)
+		if (comp_affi(str[i]) == 0)
 			ft_putchar(str[i]);
 		else
-			put_exa(str[i]);
+		{
+			ft_putchar('\\');
+			ft_putchar("0123456789abcdef"[str[i] / 16]);
+			ft_putchar("0123456789abcdef"[str[i] % 16]);
+		}
 		i ++;
 	}
 }

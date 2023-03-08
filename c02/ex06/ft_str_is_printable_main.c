@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_str_is_printable_main.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 18:24:33 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/05 18:30:15 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/06 22:03:36 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -39,7 +39,7 @@ int	ft_str_is_printable(char *str)
 int	main(void)
 {
 	char	str[] = "QDWQD";
-	char	str1[] = "FGEEFsEF";
+	char	str1[] = "FGEEF sEF";
 	char	str2[] = "-WDWDQ";
 	char	str3[] = "\r";
 	char	str4[] = "wdwq\n";

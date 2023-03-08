@@ -6,7 +6,7 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 16:16:18 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/05 16:53:00 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/06 22:01:01 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(void)
 	char	str[] = "qdwwq";
 	char	str1[] = "qdwWdw";
 	char	str2[] = "-dwqww";
-	char	str3[] = "wdq wd";
+	char	str3[] = "";
 	char	str4[] = "Qwdw";
 	
 	
