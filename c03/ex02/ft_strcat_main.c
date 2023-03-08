@@ -1,14 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 00:37:35 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/08 02:39:35 by kyaubry          ###   ########.fr       */
+/*   Created: 2023/03/06 23:33:49 by kyaubry           #+#    #+#             */
+/*   Updated: 2023/03/07 00:36:58 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int	ft_strlen(char *str)
 {
@@ -20,19 +23,29 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcat(char *dest, char *src, unsigned int nb)
+char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
 	int	len;
 
 	len = ft_strlen(dest);
 	i = 0;
-	while (src[i] != '\0' && nb > 0)
+	while (src[i] != '\0')
 	{
 		dest[len + i] = src[i];
 		i ++;
-		nb --;
 	}
 	dest[len + i] = '\0';
 	return (dest);
+}
+
+int	main(void)
+{
+	char	dest[50] = "test";
+	char	dest1[50] = "test";
+	char	src[] = "42, test";
+
+	printf("ft : %s\n", ft_strcat(dest, src));
+	printf("lib: %s\n", strcat(dest1, src));
+	return (0);
 }

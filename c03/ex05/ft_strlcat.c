@@ -6,22 +6,39 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 01:30:49 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/07 01:36:40 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/08 02:27:30 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
 
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
+int	ft_strlen(char *str)
 {
+	int	i;
 
+	i = 0;
+	while (str[i] != '\0')
+		i ++;
+	return (i);
 }
 
-int	main(void)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	char	dest[];
-	char	src[];
+	unsigned int	i;
+	unsigned int	t;
 
-	ft_strlcat();
-	return (0);
+	t = 0;
+	i = 0;
+	t = (unsigned int)ft_strlen(dest);
+	if (t > size)
+		t = size;
+	while (t + i < size - 1 && size != '\0' && src[i] != '\0')
+	{
+		dest[t + i] = src[i];
+		i ++;
+	}
+	if (size > t)
+	{
+		dest[t + 1] = '\0';
+	}
+	i = (unsigned int)ft_strlen(src);
+	return (t + i);
 }

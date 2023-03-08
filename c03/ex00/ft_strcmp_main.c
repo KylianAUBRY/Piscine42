@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 00:37:35 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/08 02:39:35 by kyaubry          ###   ########.fr       */
+/*   Created: 2023/03/06 21:00:43 by kyaubry           #+#    #+#             */
+/*   Updated: 2023/03/08 02:35:19 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
+#include <string.h>
 
-int	ft_strlen(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s1[i] == s2[i])
+	{
 		i ++;
-	return (i);
+	}
+	if (s1[i - 1] == '\0' && s2 [i - 1] == '\0' && (i - 1) > 0)
+	{
+		return (0);
+	}
+	else
+	{
+		return (s1[i] - s2[i]);
+	}
 }
 
-char	*ft_strcat(char *dest, char *src, unsigned int nb)
+int	main(void)
 {
-	int	i;
-	int	len;
+	char	s1[] = "";
+	char	s2[] = "";
 
-	len = ft_strlen(dest);
-	i = 0;
-	while (src[i] != '\0' && nb > 0)
-	{
-		dest[len + i] = src[i];
-		i ++;
-		nb --;
-	}
-	dest[len + i] = '\0';
-	return (dest);
+	printf ("%d", ft_strcmp(s1, s2));
+	printf ("\n%d", strcmp(s1, s2));
+	return (0);
 }

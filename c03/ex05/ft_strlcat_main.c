@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat_main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 00:37:35 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/08 02:39:35 by kyaubry          ###   ########.fr       */
+/*   Created: 2023/03/07 01:30:49 by kyaubry           #+#    #+#             */
+/*   Updated: 2023/03/08 02:28:03 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
 int	ft_strlen(char *str)
 {
@@ -20,19 +21,35 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcat(char *dest, char *src, unsigned int nb)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	i;
-	int	len;
+	unsigned int	i;
+	unsigned int	t;
 
-	len = ft_strlen(dest);
+	t = 0;
 	i = 0;
-	while (src[i] != '\0' && nb > 0)
+	t = (unsigned int)ft_strlen(dest);
+	if (t > size)
+		t = size;
+	while (t + i < size - 1 && size != '\0' && src[i] != '\0')
 	{
-		dest[len + i] = src[i];
+		dest[t + i] = src[i];
 		i ++;
-		nb --;
 	}
-	dest[len + i] = '\0';
-	return (dest);
+	if (size > t)
+	{
+		dest[t + 1] = '\0';
+	}
+	i = (unsigned int)ft_strlen(src);
+	return (t + i);
+}
+
+int	main(void)
+{
+	char	d[] = "test";
+	char	s[] = "42blabla";
+
+	printf("%d\n",ft_strlcat(d, s, 10));
+	printf("%s\n", d);
+	return (0);
 }

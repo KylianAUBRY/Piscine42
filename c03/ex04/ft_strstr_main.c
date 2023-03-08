@@ -6,9 +6,11 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 00:57:58 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/08 02:41:22 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/08 02:40:51 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
+#include <string.h>
 
 char	*ft_strstr(char *str, char *to_find)
 {
@@ -26,5 +28,17 @@ char	*ft_strstr(char *str, char *to_find)
 		i++;
 		i2 = 0;
 	}
+	return (0);
+}
+
+int	main(void)
+{
+	char	str[] = "salut 42 le havre";
+	char	to_find[] = "qwe";
+	char	str2[] = "salut 42 le havre";
+	char	to_find2[] = "qwe";
+
+	printf(" %s\n", ft_strstr(str, to_find));
+	printf(" %s", strstr(str2, to_find2));
 	return (0);
 }
