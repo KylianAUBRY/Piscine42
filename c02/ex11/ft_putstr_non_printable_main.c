@@ -6,7 +6,7 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 22:20:06 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/08 02:11:46 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/08 17:30:06 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -32,7 +32,7 @@ void	ft_putstr_non_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (comp_affi(str[i]) == 0)
+		if (comp_affi(str[i]) == 1)
 			ft_putchar(str[i]);
 		else
 		{
