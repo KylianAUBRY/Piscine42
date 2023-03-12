@@ -6,7 +6,7 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 07:18:42 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/09 08:22:19 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/12 23:27:06 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -25,19 +25,19 @@ void	ft_putstr(char *str)
 	write (1, "\n", 1);
 }
 
-int	valeur_acsii(char *str)
+int	valeur_acsii(char *str1, char *str2)
 {
 	int	i;
-	int	num;
 
 	i = 0;
-	num = 0;
-	while (str[i] != '\0')
+	while (str1[i] != '\0')
 	{
-		num = num + str[i];
-		i ++;
+		if (str1[i] > str2[i])
+			return (1);
+		if (str1[i] < str2[i])
+			return (0);
 	}
-	return (num);
+	return (0);
 }
 
 void	ft_swap(char **tab1, char **tab2)
@@ -62,18 +62,18 @@ int	main(int argc, char **argv)
 	{
 		while (i < size - 1)
 		{
-			if (valeur_acsii(argv[i]) > valeur_acsii(argv[i + 1]))
+			if (valeur_acsii(argv[i], argv[i + 1]) == 1)
 				ft_swap(&argv[i], &argv[i + 1]);
 			i ++;
 		}
 		size --;
 		i = 1;
 	}
-	size = argc - 1;
-	while (size > 0)
+	i = 1;
+	while (i < argc)
 	{
-		ft_putstr(argv[size]);
-		size --;
+		ft_putstr(argv[i]);
+		i ++;
 	}
 	return (0);
 }
