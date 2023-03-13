@@ -6,7 +6,7 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 06:56:55 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/09 07:05:40 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/13 20:21:44 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 	int	i;
 
 	i = 1;
-	while (i != argc)
+	while (i < argc)
 	{
 		ft_putstr(argv[i]);
 		i ++;
