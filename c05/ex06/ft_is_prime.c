@@ -6,7 +6,7 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 19:42:33 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/13 19:55:54 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/14 19:47:42 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,4 @@ int	ft_is_prime(int nb)
 		i --;
 	}
 	return (1);
-}
-#include <stdio.h>
-int	main(void)
-{
-	printf("%d", ft_is_prime(97));
 }

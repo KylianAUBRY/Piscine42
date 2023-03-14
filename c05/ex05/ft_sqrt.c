@@ -6,17 +6,17 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:29:43 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/13 21:19:13 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/14 19:45:48 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
 	int	i;
 
 	i = 1;
 	if (nb == 2147395600)
-		return(46340);
+		return (46340);
 	if (nb > 2147395600)
 		return (0);
 	while (i * i < nb)
@@ -25,10 +25,4 @@ int ft_sqrt(int nb)
 		return (i);
 	else
 		return (0);
-}
-#include <stdio.h>
-int	main(void)
-{
-	printf("%d", ft_sqrt(2147395600));
-	return (0);
 }

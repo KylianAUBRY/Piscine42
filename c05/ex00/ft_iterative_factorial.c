@@ -6,10 +6,9 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:20:54 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/09 19:30:27 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/14 19:36:57 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
 
 int	ft_iterative_factorial(int nb)
 {
@@ -24,10 +23,4 @@ int	ft_iterative_factorial(int nb)
 		res = res * nb;
 	}
 	return (res);
-}
-
-int	main(void)
-{
-	printf("%d", ft_iterative_factorial(10));
-	return (0);
 }

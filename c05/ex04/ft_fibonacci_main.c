@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 19:39:09 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/14 19:38:19 by kyaubry          ###   ########.fr       */
+/*   Created: 2023/03/13 01:03:43 by kyaubry           #+#    #+#             */
+/*   Updated: 2023/03/14 19:43:17 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int	ft_fibonacci(int index)
 {
-	if (nb < 0)
+	if (index <= 0)
 		return (0);
-	if (nb < 2)
+	if (index == 1)
 		return (1);
-	return (nb * ft_recursive_factorial(nb - 1));
+	return (ft_fibonacci(index - 2) + ft_fibonacci(index - 1));
+}
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%d", ft_fibonacci(10));
+	return (0);
 }
