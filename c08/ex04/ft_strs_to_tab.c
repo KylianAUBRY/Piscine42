@@ -6,7 +6,7 @@
 /*   By: kyaubry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 20:42:46 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/16 21:28:16 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/19 20:21:13 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -25,7 +25,7 @@ int	ft_stlen(char *str)
 char	*ft_strdup(char *src)
 {
 	char	*dest;
-	int	i;
+	int		i;
 
 	i = 0;
 	dest = malloc(ft_stlen(src) * sizeof(char));
@@ -42,8 +42,8 @@ char	*ft_strdup(char *src)
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	int	i;
 	t_stock_str	*tab;
+	int			i;
 
 	i = 0;
 	if (ac < 0)
@@ -59,5 +59,5 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		i ++;
 	}
 	tab[i].str = 0;
-	return(tab);
+	return (tab);
 }
