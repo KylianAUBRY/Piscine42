@@ -4,6 +4,7 @@ SRCS	=	saint_main.c	\
 				saint_algo.c	\
 				saint_function.c 	\
 				saint_display.c	\
+				saint_fill.c	\
 		
 
 OBJ =	${SRCS:.c=.o}
