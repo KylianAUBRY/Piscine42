@@ -13,14 +13,16 @@
 int	ft_iterative_factorial(int nb)
 {
 	int	res;
+	int	i;
 
-	res = nb;
+	res = 1;
+	i = 1;
 	if (nb < 0 || nb > 12)
 		return (0);
-	while (nb != 1)
+	while (i <= nb)
 	{
-		nb --;
-		res = res * nb;
+		res *= i;
+		i++;
 	}
 	return (res);
 }
