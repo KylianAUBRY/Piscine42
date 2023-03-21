@@ -21,18 +21,19 @@ void	malloc_tab(t_cube *cube, char *map_txt)
 	i = 0;
 	j = 0;
 	k = 0;
-	cube->map = malloc(sizeof(char) * (cube->nb_line + 1));
-	while(map_txt[j - 1] != '\n')
-		j ++;
+	cube->map = (char **)malloc((sizeof(char*) * cube->nb_line) + 1);
+	while(map_txt[j] != '\n')
+		j++;
+	j++;
 	while(i <= cube->nb_line)
 	{
 		while(map_txt[j] != '\n' && map_txt[j] != '\0')
 		{
-			cube->map[i] = malloc(sizeof(char) * (k + 1));
+			cube->map[i] = (char*)malloc((sizeof(char) * (k + 1)) + 1);
 			k++;
 			j++;
 		}
-		if(map_txt[j] == '\n')
+		if(map_txt[j] != '\0' && map_txt[j] == '\n')
 			j++;
 		k = 0;
 		i++;
@@ -48,9 +49,10 @@ void	init_tab(t_cube *cube, char *map_txt)
 	i = 0;
 	j = 0;
 	k = 0;
-	while(map_txt[j - 1] != '\n')
-		j ++;
+	while(map_txt[j] != '\n')
+		j++;
 	malloc_tab(cube, map_txt);
+	j ++;
 	while(i < cube->nb_line)
 	{
 		while(map_txt[j] != '\n' && map_txt[j] != '\0')
@@ -69,13 +71,12 @@ void	init_tab(t_cube *cube, char *map_txt)
 
 int init_map(t_cube *cube, char *src)
 {
-	int		i;
 	char	*map_txt;
 	int		map_file;
-	int		read_file;
+	int		read_file = 1;
+	int		i;
 
-	i = 1;
-	map_txt = malloc(sizeof(char) * i);
+	map_txt = malloc((sizeof(char) * 2147483646) + 1);
 	map_file = open(src, O_RDONLY);
 	if (map_file == -1)
 	{
@@ -83,14 +84,13 @@ int init_map(t_cube *cube, char *src)
     	free(map_txt);
 		return (0);
 	}
-	read_file = read(map_file, map_txt, i);
-	while (map_txt[i - 1] != '\0')
+	while (read_file)
 	{
-		i++;
-		map_txt = malloc(sizeof(char) * i + 1);
-		map_file = open(src, O_RDONLY);
-		read_file = read(map_file, map_txt, i + 1);
+		read_file = read(map_file, map_txt, 2147483646);
+		if (read_file != 0)
+			i = read_file;
 	}
+	map_txt[i] = '\0';
 	if (ft_recup_symb(cube, map_txt) == 1)
 	{
 		init_tab(cube, map_txt);
@@ -103,6 +103,12 @@ int init_map(t_cube *cube, char *src)
 	return (0);
 }
 /*
+	while (read_file)
+	{
+		read_file = read(map_file, map_txt, 4096 + 1);
+		map_txt[read_file] = '\0';
+		printf("%s", map_txt);
+	}
 ..........
 .........o
 ..........

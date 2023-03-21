@@ -6,7 +6,7 @@
 /*   By: kyaubry <kyaubry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 02:21:31 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/21 07:14:58 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/21 20:28:41 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int verif_col(t_cube *cube, t_cube_tmp *cube_tmp)
 
 int verif2(t_cube *cube, t_cube_tmp *cube_tmp)
 {
+    if (cube->map[cube_tmp->y][cube_tmp->x] == cube->barrier)
+        return (0);
     if (cube_tmp->xtps >= cube->nb_col || cube_tmp->ytps >= cube->nb_line)
         return (0);
     if (verif_ligne(cube, cube_tmp) == 1 && verif_col(cube, cube_tmp) == 1)
@@ -55,6 +57,8 @@ int verif2(t_cube *cube, t_cube_tmp *cube_tmp)
 
 int verif(t_cube *cube, t_cube_tmp *cube_tmp)
 {
+    if (cube->map[cube_tmp->y][cube_tmp->x] == cube->barrier)
+        return (0);
     if (cube_tmp->xtps >= cube->nb_col || cube_tmp->ytps >= cube->nb_line)
         return (0);
     if (verif_ligne(cube, cube_tmp) == 1 && verif_col(cube, cube_tmp) == 1)
@@ -68,7 +72,10 @@ int    call_algo(t_cube *cube)
 
     init_cube(cube, cube_tmp);
     if (cube->nb_line > 1)
-        algo(cube, cube_tmp);
+    {
+        if (algo(cube, cube_tmp) == 0)
+            return (0);
+    }
     else
     {
         if (cube->nb_line == 1)

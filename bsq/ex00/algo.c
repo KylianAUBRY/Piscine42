@@ -6,7 +6,7 @@
 /*   By: kyaubry <kyaubry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 02:21:27 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/21 07:11:05 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/21 20:29:33 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@ void    res_tps(t_cube_tmp *cube_tmp)
     cube_tmp->ytps = cube_tmp->y;
 }
 
-void    modif_map(t_cube *cube)
+int    modif_map(t_cube *cube)
 {
     int i;
 
     i = cube->xtps;
+    if (good(cube) == 0)
+        return (0);
     while (cube->ytps >= cube->y)
     {
         while (cube->xtps >= cube->x)
@@ -43,6 +45,7 @@ void    modif_map(t_cube *cube)
         cube->xtps = i;
         cube->ytps  --;   
     }
+    return (1);
 }
 void    init_cube(t_cube *cube, t_cube_tmp *cube_tmp)
 {
@@ -58,7 +61,7 @@ void    init_cube(t_cube *cube, t_cube_tmp *cube_tmp)
     cube_tmp->ytps = 0;
 }
 
-void    algo(t_cube *cube, t_cube_tmp *cube_tmp)
+int    algo(t_cube *cube, t_cube_tmp *cube_tmp)
 {
     while (cube_tmp->y < cube->nb_line && cube_tmp->x < cube->nb_col)
     {
@@ -66,14 +69,14 @@ void    algo(t_cube *cube, t_cube_tmp *cube_tmp)
         {
             while (verif2(cube, cube_tmp) == 1)
             {
-                cube_tmp->xtps ++;
-                cube_tmp->ytps ++;
                 if (verif(cube, cube_tmp) == 1)
                 {
                     cube_tmp->val = (cube_tmp->xtps - cube_tmp->x);
                     if (cube_tmp->val > cube->val)
                         change_cube(cube, cube_tmp);
                 }
+                cube_tmp->xtps ++;
+                cube_tmp->ytps ++;
             }
             cube_tmp->x ++;
             res_tps(cube_tmp);
@@ -82,5 +85,7 @@ void    algo(t_cube *cube, t_cube_tmp *cube_tmp)
         cube_tmp->y ++;
         res_tps(cube_tmp);
     }
-    modif_map(cube);
+    if (modif_map(cube) == 1)
+        return (1);
+    return (0);
 }

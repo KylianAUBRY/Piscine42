@@ -6,7 +6,7 @@
 /*   By: kyaubry <kyaubry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 21:55:20 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/21 02:00:21 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/21 19:53:46 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 int	ft_check_last(char *str, int i, t_cube *cube, int back)
 {
 	i = i - cube->nb_col;
-	back++;
 	if (back != cube->nb_line)
 		return (0);
-	while (str[++i])
+	while (str[++i] != '\n')
 	{
 		if (str[i] != cube->barrier && str[i] != cube->empty)
 			return (0);
@@ -47,7 +46,7 @@ int	ft_check_btw(char *str, int i, t_cube *cube, int back)
 		}
 		if (str[i + 1] == '\0')
 		{
-			if (cube->nb_col == j)
+			if (cube->nb_col != j)
 				return (ft_check_last(str, i, cube, back));
 			else
 				return (0);
@@ -67,8 +66,10 @@ int	ft_check_first(char *str, t_cube *cube, int save)
 	back = 0;
 	if (cube->nb_line == 1)
 	{
-		while (str[i])
-		{
+		if (str[i] == '\n')
+			return (0);
+		while (str[i + 1] != '\0')
+		{			
 			if (str[i] != cube->barrier && str[i] != cube->empty)
 				return (0);
 			i++;
@@ -98,15 +99,18 @@ int	ft_recup_symb(t_cube *cube, char *str)
 	j = -1;
 	cube->nb_line = 0;
 	while(str[i + 1] != '\n' && str[i + 1] != '\0')
+	{
 		i++;
+	}
 	if (str[i + 1] == '\0')
 		return (0);
 	save = i + 2;
 	cube->square = str[i--];
 	cube->barrier = str[i--];
 	cube->empty = str[i--];
-	if (cube->square == cube->empty || cube->empty == cube->barrier || cube->barrier == cube->square)
-		return (0);
+	if (cube->square == cube->empty || cube->empty == cube->barrier || cube->barrier == cube->square) // ICI
+		return (0);	
+
 	while(++j <= i)
 	{
 		if (str[j] < '0' || str[j] > '9')

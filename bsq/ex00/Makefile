@@ -13,7 +13,7 @@ OBJ =	${SRCS:.c=.o}
 
 CC =	cc
 
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror #-fsanitize=address
 
 .c.o:
 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)

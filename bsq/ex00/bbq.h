@@ -6,7 +6,7 @@
 /*   By: kyaubry <kyaubry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:38:29 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/03/21 07:15:08 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/03/21 20:21:27 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_recup_symb(t_cube *cube, char *str);
 void	init_tab(t_cube *cube, char *map_txt);
 void	malloc_tab(t_cube *cube, char *map_txt);
 void    print_map(t_cube *cube);
-void    algo(t_cube *cube, t_cube_tmp *cube_tmp);
+int    algo(t_cube *cube, t_cube_tmp *cube_tmp);
 int verif_ligne(t_cube *cube, t_cube_tmp *cube_tmp);
 int verif_col(t_cube *cube, t_cube_tmp *cube_tmp);
 int verif2(t_cube *cube, t_cube_tmp *cube_tmp);
@@ -60,6 +60,7 @@ int    call_algo(t_cube *cube);
 void    init_cube(t_cube *cube, t_cube_tmp *cube_tmp);
 void    change_cube(t_cube *cube, t_cube_tmp *cube_tmp);
 void    res_tps(t_cube_tmp *cube_tmp);
-void    modif_map(t_cube *cube);
+int    modif_map(t_cube *cube);
+int     good(t_cube *cube);
 
  #endif
