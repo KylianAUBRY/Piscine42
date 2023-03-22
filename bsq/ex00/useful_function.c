@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   useful_function.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yalounic <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/22 08:31:48 by yalounic          #+#    #+#             */
+/*   Updated: 2023/03/22 12:00:12 by yalounic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "bbq.h"
 
 void	ft_putchar(char c)
@@ -44,4 +56,18 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	return (sign * res);
+}
+
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	count;
+
+	count = 0;
+	while (src[count])
+	{
+		dest[count] = src[count];
+		count++;
+	}
+	dest[count] = '\0';
+	return (dest);
 }
